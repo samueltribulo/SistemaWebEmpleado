@@ -13,7 +13,7 @@ namespace SistemaWebEmpleado.Controllers
         public IActionResult Index()
         {
             ViewBag.Saludo = "Bienvenido al sitio web!";
-            ViewBag.Fecha = DateTime.Now;
+            ViewBag.Fecha = DateTime.Now.ToString("dd-MM-yyyy");
 
             return View();
         }

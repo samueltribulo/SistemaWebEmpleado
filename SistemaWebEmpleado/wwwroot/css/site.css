@@ -1,71 +1,162 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿*{
+    box-sizing: border-box;
 }
 
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+
+body{
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-areas: "h h h h"
+                         "s s s s"
+                         "n n n n"
+                         "m m m m"
+                         "f f f f";
+    grid-template-rows: 2fr 1fr 1fr 4fr 0.5fr; 
+    margin: 0;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+header{
+    grid-area: h;
+    background-color: cornflowerblue;
+    display: flex;
+    flex-direction:column;
+    align-items: flex-end;
+    justify-content: center;
+}
+header h1{
+    margin: 0;
+    font-size: 5em;
+    padding: 20px;
+    color: white;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+#sidebar{
+    grid-area: s;
+    display: flex;
+    align-items:center;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+#sidebar h2{
+    margin: 0;
+    color: black;
+    font-size: 4em;
+    padding: 20px;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+#sidebar img{
+    width: 150px;
+    height: 150px;
+    padding: 20px;
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+nav{
+    grid-area: n;
+    background-color: lightgreen;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+nav ul{
+    list-style: none;
+    width:40%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+nav a{
+    font-size: 1.8em;
+    color: white;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+
+main{
+    grid-area: m;
+    display:flex;
+    flex-direction: column;
+}
+
+main table {
+    border: 1px solid black;
+    border-spacing: 0;
+    width: 900px;
+}
+
+main table th, td{
+    vertical-align: top;
+    border: 1px solid black;
+    text-align: left;
+    font-size: 1.5em;
+}
+
+form {
+    width: 400px;
+    padding: 16px;
+    border-radius: 10px;
+    margin: auto;
+    background-color: #ccc;
+    display:flex;
+    flex-direction:column;
+}
+    form div {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+form label {
+        width: auto;
+        font-weight: bold;
+        display: inline-block;
+}
+form input[type="text"]{
+        width: 180px;
+        padding: 3px 10px;
+        border: 1px solid #f6f6f6;
+        border-radius: 3px;
+        background-color: #f6f6f6;
+        margin: 8px 0;
+}
+
+.celdaOpciones {
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+}
+
+#homeContainer a{
+    padding:20px;
+    font-size:2em;
+    color: dodgerblue;
+
+}
+#homeDiv{
+    display:flex;
+    width:100%;
+    justify-content:space-between;
+    padding: 20px;
+}
+
+#homeDiv h2{
+    font-size: 2em;
+    margin:0;
+}
+
+#homeDiv p{
+    font-size: 1.8em;
+}
+
+
+
+
+footer {
+    grid-area: f;
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+}
+
+footer p{
+    font-size: 2em;
+    color: white;
 }
