@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<article id ="homeContainer">
+    <div id="homeDiv">
+        <h2>@ViewBag.Saludo</h2>
+        <small>Fecha: @ViewBag.Fecha</small>
+    </div>
+
+    @Html.ActionLink("Ir a Empleados", "Index", "Empleado")
+</article>
+

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/css/site.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        <h1>SISTEMA Empleado</h1>
+    </header>
+    <div id="sidebar">
+        @if (IsSectionDefined("sidebar"))
+        {
+        
+            @RenderSection("sidebar")
+
+        }
+        else
+        {
+            <img src="https://cdn4.iconfinder.com/data/icons/emoji-18/61/5-256.png" alt="carita feliz"/>
+
+            <h2>Bienvenido!</h2>
+        }
+    </div>
+    <nav>
+        <ul>
+            <li>
+                @Html.ActionLink("Home", "Index", "Home")
+            </li>
+            <li>
+                @Html.ActionLink("Empleado", "Index", "Empleado")
+            </li>
+
+        </ul>
+    </nav>
+    <main id="Content">
+        @RenderBody()
+    </main>
+    <footer>
+        <p>Info@Empleado.com</p>
+    </footer>
+</body>
+</html>
