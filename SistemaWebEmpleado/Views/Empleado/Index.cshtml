@@ -48,10 +48,10 @@
 
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                @Html.DisplayFor(modelItem => item.FechaNacimiento.Date)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Titulo)
+                @Html.ActionLink($"{item.Titulo}", "FilterByTitle", "Empleado", new { Titulo = item.Titulo })
             </td>
             <td class="celdaOpciones">
                 @Html.ActionLink("Ver", "Details", "Empleado", new {id = item.Id})

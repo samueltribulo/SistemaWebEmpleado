@@ -17,11 +17,16 @@ namespace SistemaWebEmpleado.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(IEnumerable<Empleado> empleados)
         {
-            var empleados = _context.Empleados.ToList();
+            if(empleados.Count() == 0)
+            {
+                var todosLosEmpleados = _context.Empleados.ToList();
+                return View(todosLosEmpleados);
+            }
 
             return View(empleados);
+
         }
 
         [HttpGet]
@@ -41,6 +46,15 @@ namespace SistemaWebEmpleado.Controllers
                 return RedirectToAction("Index");
             }
             return View(empleado);
+        }
+
+        [HttpGet]
+        public ActionResult FilterByTitle(string Titulo) {
+
+            IEnumerable<Empleado> empleados = _context.Empleados.Where(e => e.Titulo == Titulo).ToList();
+
+            return View("Index", empleados);
+
         }
     }
 }
